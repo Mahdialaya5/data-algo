@@ -1,0 +1,50 @@
+ALGORITHM algorithm_name
+VAR
+ set1 : ARRAY_OF INTEGER;
+ set2 : ARRAY_OF INTEGER;
+   i : INTEGER; 
+   j:INTEGER;
+   sumd:INTEGER=0;
+   isdiff:BOOLEAN=true;
+   sumc:INTEGER=0;
+BEGIN
+ for (i=0;i<set1.length;i++)
+{for(j=0;j<set2.length;j++){
+IF (set[i]#set[j]) THEN
+   isdiff=true
+   ELSE isdiff=false
+END_IF
+}
+IF (isdiff=true) THEN
+   sumd=sumd+set[i]+set[j];
+END_IF
+}
+// hash_table
+for (i=0;i<set1.length;i++)
+{HASH_TABLE.insert(set1[i],1)}
+for(j=0;j<set2.length;j++)
+{HASH_TABLE.lookup(set2[J].2)}
+ELSE
+HASH_TABLE.insert(set2[j],1)
+for (i=0;i<set1.length;i++)
+{ IF (HASH_TABLE.lookup(set1[i],1)) THEN
+   sumd=sumd+set1[i]
+END_IF }
+for(j=0;j<set2.length;j++)
+{IF (HASH_TABLE.lookup(set1[j],1))THEN
+  sumd=sumd+set2[j]
+END_IF }
+// problem 2
+ for (i=0;i<set1.length;i++)
+{for(j=0;j<set2.length;j++){
+IF (set[i]#set[j]) THEN
+   isdiff=true
+   ELSE isdiff=false
+END_IF
+}
+IF (isdiff=false) THEN
+   sumc=sumc+set[i]+set[j];
+END_IF
+}
+
+

@@ -9,42 +9,82 @@ VAR
    sumc:INTEGER=0;
 BEGIN
  for (i=0;i<set1.length;i++)
+    isdiff=true
+
 {for(j=0;j<set2.length;j++){
+IF (set[i]=set[j]) THEN
+   isdiff=false
+
+END_IF
+}
+IF (isdiff=true) THEN
+   sumd=sumd+set[i];
+END_IF
+IF (isdiff=false) THEN
+   sumc=sumc+set[i];
+END_IF
+}
+for (j=0;j<set2.length;j++)
+{for(i=0;i<set1.length;i++){
 IF (set[i]#set[j]) THEN
    isdiff=true
    ELSE isdiff=false
 END_IF
 }
 IF (isdiff=true) THEN
-   sumd=sumd+set[i]+set[j];
+   sumd=sumd+set[j];
+END_IF
+IF (isdiff=false) THEN
+   sumc=sumc+set[j];
 END_IF
 }
 // hash_table
 for (i=0;i<set1.length;i++)
 {HASH_TABLE.insert(set1[i],1)}
 for(j=0;j<set2.length;j++)
-{HASH_TABLE.lookup(set2[J].2)}
+{if(HASH_TABLE.lookup(set2[J]))THEN
+HASH_TABLE.insert(set2[j],2)
 ELSE
-HASH_TABLE.insert(set2[j],1)
-for (i=0;i<set1.length;i++)
-{ IF (HASH_TABLE.lookup(set1[i],1)) THEN
+ HASH_TABLE.insert(set2[j],2)
+for (i=0;i<set1.length;i++)}
+{ IF (HASH_TABLE.get(set1[i]=1)) THEN
    sumd=sumd+set1[i]
-END_IF }
+END_IF 
+IF (HASH_TABLE.lookup(set1[i],2)) THEN
+   sumc=sumc+set1[i]
+END_IF
+}
 for(j=0;j<set2.length;j++)
 {IF (HASH_TABLE.lookup(set1[j],1))THEN
   sumd=sumd+set2[j]
-END_IF }
+END_IF 
+IF (HASH_TABLE.get(set1[j],2))THEN
+  sumc=sumc+set2[j]
+END_IF
+}
 // problem 2
- for (i=0;i<set1.length;i++)
+ for (i=0;i<set1.length;i++) 
+ isdiff=true
 {for(j=0;j<set2.length;j++){
-IF (set[i]#set[j]) THEN
-   isdiff=true
-   ELSE isdiff=false
+IF (set[i]=set[j]) THEN
+   isdiff=false
+   ELSE isdiff=true
 END_IF
 }
 IF (isdiff=false) THEN
-   sumc=sumc+set[i]+set[j];
+   sumc=sumc+set[i];
 END_IF
 }
-
+for (j=0;j<set1.length;j++)
+isdiff=true
+{for(i=0;i<set2.length;i++){
+IF (set[i]=set[j]) THEN
+   isdiff=false
+   ELSE isdiff=true
+END_IF
+}
+IF (isdiff=false) THEN
+   sumc=sumc+set[j];
+END_IF
+}
 
